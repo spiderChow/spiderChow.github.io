@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://junying.ink/"/>
-  <updated>2018-03-16T08:56:30.000Z</updated>
+  <updated>2018-03-16T13:50:21.000Z</updated>
   <id>http://junying.ink/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Terminal Notes</title>
+    <link href="http://junying.ink/2018/03/16/Linux-Terminal-Notes/"/>
+    <id>http://junying.ink/2018/03/16/Linux-Terminal-Notes/</id>
+    <published>2018-03-16T13:48:50.000Z</published>
+    <updated>2018-03-16T13:50:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="open-your-operating-system’s-file-explorer-in-this-directory"><a href="#open-your-operating-system’s-file-explorer-in-this-directory" class="headerlink" title="open your operating system’s file explorer in this directory."></a>open your operating system’s file explorer in this directory.</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ open . <span class="comment"># for MAC</span></span><br><span class="line">$ gnome-open . <span class="comment"># for Ubuntu</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;open-your-operating-system’s-file-explorer-in-this-directory&quot;&gt;&lt;a href=&quot;#open-your-operating-system’s-file-explorer-in-this-directory
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://junying.ink/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Intro to Java</title>
+    <link href="http://junying.ink/2018/03/16/Intro-to-Java/"/>
+    <id>http://junying.ink/2018/03/16/Intro-to-Java/</id>
+    <published>2018-03-16T13:16:14.000Z</published>
+    <updated>2018-03-16T14:49:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Intro to Java.<br><a href="https://sp18.datastructur.es/" target="_blank" rel="noopener">CS 16B sp2018</a></p><a id="more"></a><h2 id="Java-program"><a href="#Java-program" class="headerlink" title="Java program"></a>Java program</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello world!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Execute-Java"><a href="#Execute-Java" class="headerlink" title="Execute Java"></a>Execute Java</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ javac HelloWorld.java <span class="comment"># Compiler would generate HelloWorld.class</span></span><br><span class="line">$ java HelloWorld <span class="comment"># Interpreter would run the class file.</span></span><br></pre></td></tr></table></figure><h2 id="Static-Typing"><a href="#Static-Typing" class="headerlink" title="Static Typing"></a>Static Typing</h2><p>Java variables can contain values of that type, and only that type. Furthermore, the type of a variable can never change. The compiler rejects this program out of hand before it even runs.<br>This is in contrast to dynamically typed languages like Python, where users can run into type errors during execution!  </p><h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><p>Functions that are part of a class are commonly called “methods”.  </p><h2 id="Comments-Javadoc"><a href="#Comments-Javadoc" class="headerlink" title="Comments, Javadoc"></a>Comments, Javadoc</h2><p>Comments where appropriate. Line comments in Java use the // delimiter. Block (a.k.a. multi-line comments) comments use /* and */  </p><h4 id="Javadoc"><a href="#Javadoc" class="headerlink" title="Javadoc"></a>Javadoc</h4><p>The widely used javadoc tool can be used to generate HTML descriptions of your code.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LargerDemo</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** Returns the larger of x and y. */</span>           </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">larger</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(larger(<span class="number">8</span>, <span class="number">10</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">numbers[<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line">numbers[<span class="number">1</span>] = <span class="number">7</span>;</span><br><span class="line">numbers[<span class="number">2</span>] = <span class="number">10</span>;</span><br><span class="line">System.out.println(numbers[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>&#125;;</span><br><span class="line">System.out.println(numbers[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">String[] a = &#123;<span class="string">"cat"</span>, <span class="string">"dog"</span>, <span class="string">"laser horse"</span>, <span class="string">"ketchup"</span>, <span class="string">"horse"</span>, <span class="string">"horbse"</span>&#125;;</span><br></pre></td></tr></table></figure><h3 id="Command-Line-Arguments"><a href="#Command-Line-Arguments" class="headerlink" title="Command Line Arguments"></a>Command Line Arguments</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArgsDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(args[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ java ArgsDemo these are <span class="built_in">command</span> line arguments</span><br><span class="line">these</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Intro to Java.&lt;br&gt;&lt;a href=&quot;https://sp18.datastructur.es/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CS 16B sp2018&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CS 61B" scheme="http://junying.ink/categories/CS-61B/"/>
+    
+    
+      <category term="Java" scheme="http://junying.ink/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown Note</title>
