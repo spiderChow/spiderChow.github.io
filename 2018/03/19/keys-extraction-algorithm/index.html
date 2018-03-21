@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>keys extraction algorithm | Home of Junying</title>
+  <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth." />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="Home of Junying">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="TextRank, TPR, RAKE">
+<meta name="keywords" content="Keywords Extraction">
+<meta property="og:type" content="article">
+<meta property="og:title" content="keys extraction algorithm">
+<meta property="og:url" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/index.html">
+<meta property="og:site_name" content="Home of Junying">
+<meta property="og:description" content="TextRank, TPR, RAKE">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/textrank.png">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/TPR.png">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/Rake.png">
+<meta property="og:updated_time" content="2018-03-20T11:37:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="keys extraction algorithm">
+<meta name="twitter:description" content="TextRank, TPR, RAKE">
+<meta name="twitter:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/textrank.png">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+
+
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Home of Junying
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/about" class="nav-about nav">
+				About
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-keys-extraction-algorithm"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/03/19/keys-extraction-algorithm/">
+    	keys extraction algorithm
+    </a>
+  </h2>
+	<time>
+	  Mar 19, 2018
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/categories/NLP/">NLP</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TextRank"><span class="toc-number">1.</span> <span class="toc-text">TextRank</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Topical-PageRank"><span class="toc-number">2.</span> <span class="toc-text">Topical PageRank</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rapid-automatic-keyword-extraction-RAKE"><span class="toc-number">3.</span> <span class="toc-text">Rapid automatic keyword extraction (RAKE)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Candidate-keywords"><span class="toc-number">3.0.1.</span> <span class="toc-text">Candidate keywords</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Word-co-occurrences-Graph"><span class="toc-number">3.0.2.</span> <span class="toc-text">Word co-occurrences Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Score-of-candidiate-sum-of-its-member-word-scores"><span class="toc-number">3.0.3.</span> <span class="toc-text">Score of candidiate (sum of its member word scores):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adjoining-keywords"><span class="toc-number">3.0.4.</span> <span class="toc-text">Adjoining keywords</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Top-T"><span class="toc-number">3.0.5.</span> <span class="toc-text">Top T</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Evaluation"><span class="toc-number">3.0.6.</span> <span class="toc-text">Evaluation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Single-document-keyphrase-extraction-using-neighborhood-knowledge"><span class="toc-number">4.</span> <span class="toc-text">Single document keyphrase extraction using neighborhood knowledge</span></a></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>TextRank, TPR, RAKE<br><a id="more"></a></p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="TextRank"><a href="#TextRank" class="headerlink" title="TextRank"></a>TextRank</h1><p><a href="https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf" target="_blank" rel="noopener">TextRank: Bringing Order into Texts</a><br>2004 EMNLP, Rada Mihalcea and Paul Tarau</p>
+<p>$$S(V_i) = (1-d)+d*\Sigma_{j\in IN(V_i)} S(V_j)/|Out(V_j)|$$</p>
+<p>Graph:      </p>
+<ul>
+<li>Vertice: syntactic filters select only lexical units of a certain part of speech. One can for instance con- sider only nouns and verbs for addition to the graph, and consequently draw potential edges based only on relations that can be established between nouns and verbs.</li>
+<li>Edge: We are using a co-occurrence relation, controlled by the distance between word occurrences: two vertices are connected if their corresponding lexical units co-occur within a window of maximum words, where can be set anywhere from 2 to 10 words. Co-occurrence links express relations between syntactic element.</li>
+</ul>
+<p>Steps:</p>
+<ul>
+<li>The text is tokenized, and annotated with part of speech tags – a preprocessing step required to enable the application of syntactic filters.</li>
+<li>After the graph is constructed (undirected unweighted graph), the score associated with each vertex is set to an initial value of 1, and the ranking algorithm described is run on the graph for several iterations until it converges – usually for 20-30 iterations, at a threshold of 0.0001.</li>
+<li>Top vertices in the ranking are retained for post-processing. Sequences of adjacent keywords are collapsed into a multi-word keyword.</li>
+</ul>
+<p><img src="/2018/03/19/keys-extraction-algorithm/textrank.png" alt=""></p>
+<h1 id="Topical-PageRank"><a href="#Topical-PageRank" class="headerlink" title="Topical PageRank"></a>Topical PageRank</h1><p><a href="http://www.personal.psu.edu/wzh112/publications/emnlp2010.pdf" target="_blank" rel="noopener">Automatic keyphrase extraction via topic decomposition. Liu 2010</a><br>2010 EMNLP, Zhiyuan Liu, Wenyi Huang, Yabin Zheng and Maosong Sun</p>
+<p>Word graph:<br>The link directions are determined as follows. When sliding a W-width window, at each position, we add links from the first word pointing to other words within the window. Since keyphrases are usually noun phrases, we only add adjectives and nouns in word graph.</p>
+<blockquote>
+<p>LDA:<br>N 文章长度，满足泊松分布（越长越少，越短越少）<br>一个文章的topic分布 θ ~ Dir(alpha) alpha是topic的一个分布情况。Dir: 将一个分布换成另一个分布</p>
+<p>topic z_n ~multinomial(θ)<br>w ~ p(w|z_n,beta)<br>似然函数<br>变分推断，EM算法(含有隐蔽那辆的时候求最大似然)<br>VAE: 似然 x-&gt;y ，引入隐变量 x-&gt;h-&gt;y,利用琴生不等式，变成 含有KL距离</p>
+</blockquote>
+<blockquote>
+<p>The <code>candidate keyphrases</code> of a document is obtained as follows:  </p>
+<ul>
+<li>The document is first tokenized.  </li>
+<li>After that, we annotate the document with (POS) tags.   </li>
+<li>Third, we extract noun phrases with pattern (adjective)* (noun)+.  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>the ranking score of a candidate keyphrase is computed by summing up the ranking scores of all words within the phrase.</p>
+</blockquote>
+<p>PageRank –&gt; Topical PageRank</p>
+<p>$$R(V_i) = (1-\lambda)(1/|V|)+\lambda \Sigma_{j\in IN(V_i)} R(V_j)* weight(V_j,V_i)/|Out(V_j)|$$</p>
+<p>==&gt; Biased PageRank: not equal probabilities of random jump to all vertices.</p>
+<p>$$R_z(V_i) = (1-\lambda)p_z(V_i)+\lambda \Sigma_{j\in IN(V_i)} R_Z(V_j)* weight(V_j,V_i)/|Out(V_j)|$$</p>
+<blockquote>
+<p>Topic distribution of each word: pr(z|w)<br>LDA: unsurpvised<br>$p_z(V_i)$=pr(z|w) or pr(w|z) or pr(z|w)pr(w|z)</p>
+</blockquote>
+<p>In TPR for keyphrase extraction, we first compute the ranking scores of candidate keyphrases separately for each topic.<br>For each candidate keyphrase , we compute its final ranking score as </p>
+<p>$$R(p)=\Sigma_zR_z(p)*pr(z|d)$$</p>
+<p><img src="/2018/03/19/keys-extraction-algorithm/TPR.png" alt=""></p>
+<h1 id="Rapid-automatic-keyword-extraction-RAKE"><a href="#Rapid-automatic-keyword-extraction-RAKE" class="headerlink" title="Rapid automatic keyword extraction (RAKE)"></a>Rapid automatic keyword extraction (RAKE)</h1><p><a href="https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents" target="_blank" rel="noopener">Automatic keyword extraction from individual documents, Stuart Rose, Dave Engel, Nick Cramer and Wendy Cowley, 2010</a></p>
+<p>very efficient~</p>
+<p>The above paper even has a good example.</p>
+<h3 id="Candidate-keywords"><a href="#Candidate-keywords" class="headerlink" title="Candidate keywords"></a>Candidate keywords</h3><blockquote>
+<p>First, the document text is split into an array of words by the specified word delimiters.<br>This array is then split into sequences of contiguous words at phrase delimiters and stop word positions. </p>
+</blockquote>
+<h3 id="Word-co-occurrences-Graph"><a href="#Word-co-occurrences-Graph" class="headerlink" title="Word co-occurrences Graph"></a>Word co-occurrences Graph</h3><blockquote>
+<p>After get the nodes of the graph, we would add the edges corresponding with the word co-occurrences.<br>The graph is represented by a <code>Matrix</code>.<br>Elements of the matrix is the word co-occurrences counts.</p>
+</blockquote>
+<h3 id="Score-of-candidiate-sum-of-its-member-word-scores"><a href="#Score-of-candidiate-sum-of-its-member-word-scores" class="headerlink" title="Score of candidiate (sum of its member word scores):"></a>Score of candidiate (sum of its member word scores):</h3><blockquote>
+<p>We evaluated several metrics for calculating word scores, based on the degree and frequency of word vertices in the graph:<br>ratio of degree to frequency (deg(w)/freq(w)).<br>(I think the ratio is similar with the TFIDF)</p>
+</blockquote>
+<h3 id="Adjoining-keywords"><a href="#Adjoining-keywords" class="headerlink" title="Adjoining keywords"></a>Adjoining keywords</h3><p>A new candidate keyword is then created as a combination of those keywords and their interior stop words.</p>
+<h3 id="Top-T"><a href="#Top-T" class="headerlink" title="Top T"></a>Top T</h3><p>one of third</p>
+<h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><p>The collection consists of <code>2000 Inspec abstracts</code> for journal papers from Computer Science and Information Technology. The abstracts are divided into a training set with 1000 abstracts, a validation set with 500 abstracts, and a testing set with 500 abstracts. We followed the approach described in Mihalcea and Tarau (2004), using the testing set for evaluation because <code>RAKE does not require a training set</code>. Extracted keywords for each abstract are compared against the abstract’s associated set of manually assigned uncontrolled keywords.</p>
+<p><img src="/2018/03/19/keys-extraction-algorithm/Rake.png" alt=""></p>
+<h1 id="Single-document-keyphrase-extraction-using-neighborhood-knowledge"><a href="#Single-document-keyphrase-extraction-using-neighborhood-knowledge" class="headerlink" title="Single document keyphrase extraction using neighborhood knowledge"></a>Single document keyphrase extraction using neighborhood knowledge</h1><p>AAAI 2008<br><a href="http://www.aaai.org/Papers/AAAI/2008/AAAI08-136.pdf" target="_blank" rel="noopener">Single document keyphrase extraction using neighborhood knowledge, Xiaojun Wan and Jianguo Xiao 2008</a></p>
+<p>Abstract: </p>
+<blockquote>
+<p>This paper proposes to use a <code>small number of nearest neighbor documents</code> to provide more knowledge to improve single document keyphrase extraction. A specified document is expanded to a small document set by adding a few neighbor documents close to the document, and the graph-based ranking algorithm is then applied on the expanded document set to make use of both the local information in the specified document and the global information in the neighbor documents </p>
+</blockquote>
+
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/Keywords-Extraction/">Keywords Extraction</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/03/20/Stanford-Ner/" rel="prev"  title="Stanford Ner">
+						Stanford Ner 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2018/03/17/Keywords-Extraction/" rel="next"  title="Keywords Extraction">
+						Keywords Extraction
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'keys extraction algorithm',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<img class='avatar waves-image' src='/images/avatar.jpg' />
+
+<div class='header'>Junying Chou</div>
+<div class='content'>
+<div class='desc'>Practise swimming and coding!</div>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/CS-61B/"><div class='name'>CS 61B</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/NLP/"><div class='name'>NLP</div><div class='badget'>3</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 20px; color: #000">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/spiderChow" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
