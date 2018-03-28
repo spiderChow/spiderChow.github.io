@@ -19,14 +19,14 @@
 <meta property="og:url" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/index.html">
 <meta property="og:site_name" content="Home of Junying">
 <meta property="og:description" content="TextRank, TPR, RAKE">
-<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/textrank.png">
-<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/TPR.png">
-<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/Rake.png">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/keys-extraction-algorithm/textrank.png">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/keys-extraction-algorithm/TPR.png">
+<meta property="og:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/keys-extraction-algorithm/Rake.png">
 <meta property="og:updated_time" content="2018-03-20T11:37:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="keys extraction algorithm">
 <meta name="twitter:description" content="TextRank, TPR, RAKE">
-<meta name="twitter:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/textrank.png">
+<meta name="twitter:image" content="http://junying.ink/2018/03/19/keys-extraction-algorithm/keys-extraction-algorithm/textrank.png">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -169,7 +169,7 @@
 <li>After the graph is constructed (undirected unweighted graph), the score associated with each vertex is set to an initial value of 1, and the ranking algorithm described is run on the graph for several iterations until it converges – usually for 20-30 iterations, at a threshold of 0.0001.</li>
 <li>Top vertices in the ranking are retained for post-processing. Sequences of adjacent keywords are collapsed into a multi-word keyword.</li>
 </ul>
-<p><img src="/2018/03/19/keys-extraction-algorithm/textrank.png" alt=""></p>
+<p><img src="keys-extraction-algorithm/textrank.png" alt=""></p>
 <h1 id="Topical-PageRank"><a href="#Topical-PageRank" class="headerlink" title="Topical PageRank"></a>Topical PageRank</h1><p><a href="http://www.personal.psu.edu/wzh112/publications/emnlp2010.pdf" target="_blank" rel="noopener">Automatic keyphrase extraction via topic decomposition. Liu 2010</a><br>2010 EMNLP, Zhiyuan Liu, Wenyi Huang, Yabin Zheng and Maosong Sun</p>
 <p>Word graph:<br>The link directions are determined as follows. When sliding a W-width window, at each position, we add links from the first word pointing to other words within the window. Since keyphrases are usually noun phrases, we only add adjectives and nouns in word graph.</p>
 <blockquote>
@@ -196,7 +196,7 @@
 </blockquote>
 <p>In TPR for keyphrase extraction, we first compute the ranking scores of candidate keyphrases separately for each topic.<br>For each candidate keyphrase , we compute its final ranking score as </p>
 <p>$$R(p)=\Sigma_zR_z(p)*pr(z|d)$$</p>
-<p><img src="/2018/03/19/keys-extraction-algorithm/TPR.png" alt=""></p>
+<p><img src="keys-extraction-algorithm/TPR.png" alt=""></p>
 <h1 id="Rapid-automatic-keyword-extraction-RAKE"><a href="#Rapid-automatic-keyword-extraction-RAKE" class="headerlink" title="Rapid automatic keyword extraction (RAKE)"></a>Rapid automatic keyword extraction (RAKE)</h1><p><a href="https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents" target="_blank" rel="noopener">Automatic keyword extraction from individual documents, Stuart Rose, Dave Engel, Nick Cramer and Wendy Cowley, 2010</a></p>
 <p>very efficient~</p>
 <p>The above paper even has a good example.</p>
@@ -212,7 +212,7 @@
 <h3 id="Adjoining-keywords"><a href="#Adjoining-keywords" class="headerlink" title="Adjoining keywords"></a>Adjoining keywords</h3><p>A new candidate keyword is then created as a combination of those keywords and their interior stop words.</p>
 <h3 id="Top-T"><a href="#Top-T" class="headerlink" title="Top T"></a>Top T</h3><p>one of third</p>
 <h3 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h3><p>The collection consists of <code>2000 Inspec abstracts</code> for journal papers from Computer Science and Information Technology. The abstracts are divided into a training set with 1000 abstracts, a validation set with 500 abstracts, and a testing set with 500 abstracts. We followed the approach described in Mihalcea and Tarau (2004), using the testing set for evaluation because <code>RAKE does not require a training set</code>. Extracted keywords for each abstract are compared against the abstract’s associated set of manually assigned uncontrolled keywords.</p>
-<p><img src="/2018/03/19/keys-extraction-algorithm/Rake.png" alt=""></p>
+<p><img src="keys-extraction-algorithm/Rake.png" alt=""></p>
 <h1 id="Single-document-keyphrase-extraction-using-neighborhood-knowledge"><a href="#Single-document-keyphrase-extraction-using-neighborhood-knowledge" class="headerlink" title="Single document keyphrase extraction using neighborhood knowledge"></a>Single document keyphrase extraction using neighborhood knowledge</h1><p>AAAI 2008<br><a href="http://www.aaai.org/Papers/AAAI/2008/AAAI08-136.pdf" target="_blank" rel="noopener">Single document keyphrase extraction using neighborhood knowledge, Xiaojun Wan and Jianguo Xiao 2008</a></p>
 <p>Abstract: </p>
 <blockquote>
@@ -271,13 +271,15 @@
     
     <ul class="entry">
     
-        <li><a class="flat-box" href="/categories/CS-61B/"><div class='name'>CS 61B</div><div class='badget'>1</div></a></li>
+        <li><a class="flat-box" href="/categories/CS-61B/"><div class='name'>CS 61B</div><div class='badget'>2</div></a></li>
     
         <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
     
         <li><a class="flat-box" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badget'>1</div></a></li>
     
-        <li><a class="flat-box" href="/categories/NLP/"><div class='name'>NLP</div><div class='badget'>3</div></a></li>
+        <li><a class="flat-box" href="/categories/Maths/"><div class='name'>Maths</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/NLP/"><div class='name'>NLP</div><div class='badget'>4</div></a></li>
     
     </ul>
     
@@ -288,7 +290,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 20px; color: #000">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a>
+        <a href="/tags/CRF/" style="font-size: 14px; color: #808080">CRF</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 17px; color: #404040">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/List/" style="font-size: 14px; color: #808080">List</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a>
     </div>
 </div>
 

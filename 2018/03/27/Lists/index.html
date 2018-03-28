@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Lists | Home of Junying</title>
+  <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth." />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="alternate" href="/atom.xml" title="Home of Junying">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Something about the types and delcaration and InstantiationAnd implement the List Class and its get(), size()">
+<meta name="keywords" content="Java,List">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lists">
+<meta property="og:url" content="http://junying.ink/2018/03/27/Lists/index.html">
+<meta property="og:site_name" content="Home of Junying">
+<meta property="og:description" content="Something about the types and delcaration and InstantiationAnd implement the List Class and its get(), size()">
+<meta property="og:updated_time" content="2018-03-27T23:56:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lists">
+<meta name="twitter:description" content="Something about the types and delcaration and InstantiationAnd implement the List Class and its get(), size()">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+
+
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Home of Junying
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/about" class="nav-about nav">
+				About
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-Lists"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/03/27/Lists/">
+    	Lists
+    </a>
+  </h2>
+	<time>
+	  Mar 27, 2018
+	</time>
+	
+    
+    <div class='cats'>
+        <a href="/categories/CS-61B/">CS 61B</a>
+    </div>
+
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Something-about-the-types-and-delcaration-and-Instantiation"><span class="toc-number">1.</span> <span class="toc-text">Something about the types and delcaration and Instantiation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#memory"><span class="toc-number">1.1.</span> <span class="toc-text">memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delcare"><span class="toc-number">1.2.</span> <span class="toc-text">delcare</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Golden-Rule-of-Equals-GRoE"><span class="toc-number">1.3.</span> <span class="toc-text">The Golden Rule of Equals (GRoE)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reference"><span class="toc-number">1.4.</span> <span class="toc-text">reference</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Instantiations"><span class="toc-number">1.4.1.</span> <span class="toc-text">Class Instantiations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Type-Variable-Declarations"><span class="toc-number">1.4.2.</span> <span class="toc-text">Reference Type Variable Declarations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Types-Obey-the-Golden-Rule-of-Equals"><span class="toc-number">1.4.3.</span> <span class="toc-text">Reference Types Obey the Golden Rule of Equals</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parameter-Passing"><span class="toc-number">1.5.</span> <span class="toc-text">Parameter Passing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-golden-rule"><span class="toc-number">1.6.</span> <span class="toc-text">The golden rule:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instantiation-of-Arrays"><span class="toc-number">1.7.</span> <span class="toc-text">Instantiation of Arrays</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Build-our-own-list-class"><span class="toc-number">2.</span> <span class="toc-text">Build our own list class</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">2.0.1.</span> <span class="toc-text">size()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-number">2.0.2.</span> <span class="toc-text">get()</span></a></li></ol></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>Something about the types and delcaration and Instantiation<br>And implement the List Class and its get(), size()<br><a id="more"></a></p>
+<h1 id="Something-about-the-types-and-delcaration-and-Instantiation"><a href="#Something-about-the-types-and-delcaration-and-Instantiation" class="headerlink" title="Something about the types and delcaration and Instantiation"></a>Something about the types and delcaration and Instantiation</h1><h2 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h2><p>Your computer stores information in “memory”.<br>In Java, there are 8 primitive types: byte, short, int, long, float, double, boolean, and char.</p>
+<blockquote>
+<p>One interesting observation is that both 72 and H are stored as 01001000.<br>This raises the question: how does a piece of Java code know how to interpret 01001000?<br>The answer is through types! Java interpreter treats them differently when printed.</p>
+</blockquote>
+<h2 id="delcare"><a href="#delcare" class="headerlink" title="delcare"></a>delcare</h2><p>When you <code>declare</code> a variable of a certain type, Java finds a contiguous block of <code>exactly</code> enough bits to hold a thing of that type. For example, if you declare an int, you get a block of 32 bits.   </p>
+<p>Java creates an internal table that maps each variable name to a location.   </p>
+<p>Java does not write anything into the reserved box when a variable is declared. In other words, there are <code>no default values</code>. As a result, the Java compiler prevents you from using a variable until after the box has been filled with bits using the <code>=</code> operator. </p>
+<h2 id="The-Golden-Rule-of-Equals-GRoE"><a href="#The-Golden-Rule-of-Equals-GRoE" class="headerlink" title="The Golden Rule of Equals (GRoE)"></a>The Golden Rule of Equals (GRoE)</h2><p>When you write y = x, you are telling the Java interpreter to <code>copy the bits</code> from x into y.  </p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p>Everything else, including arrays, is not a primitive type but rather a reference type</p>
+<h3 id="Class-Instantiations"><a href="#Class-Instantiations" class="headerlink" title="Class Instantiations"></a>Class Instantiations</h3><p>When we instantiate an Object (e.g. Dog, Walrus, Planet):</p>
+<ol>
+<li>Java first <code>allocates</code> a box of bits for each instance variable of the class and fills them with a <code>default value</code> (e.g. 0, null).</li>
+<li>The constructor then usually fills every such box with some other value.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Walrus someWalrus;</span><br><span class="line">someWalrus = <span class="keyword">new</span> Walrus(<span class="number">1000</span>, <span class="number">8.3</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Reference-Type-Variable-Declarations"><a href="#Reference-Type-Variable-Declarations" class="headerlink" title="Reference Type Variable Declarations"></a>Reference Type Variable Declarations</h3><p>When we <code>declare</code> a variable of any reference type (Walrus, Dog, Planet):<br>Java allocates exactly a box of <code>size 64 bits</code>, no matter what type of object.<br>These bits can be either set to:</p>
+<ol>
+<li>Null (all zeros).</li>
+<li>The 64 bit “address” of a specific instance of that class (returned by <code>new</code>).</li>
+</ol>
+<h3 id="Reference-Types-Obey-the-Golden-Rule-of-Equals"><a href="#Reference-Types-Obey-the-Golden-Rule-of-Equals" class="headerlink" title="Reference Types Obey the Golden Rule of Equals"></a>Reference Types Obey the Golden Rule of Equals</h3><p>copy the address</p>
+<h2 id="Parameter-Passing"><a href="#Parameter-Passing" class="headerlink" title="Parameter Passing"></a>Parameter Passing</h2><p>In Java, we always pass by value.</p>
+<h2 id="The-golden-rule"><a href="#The-golden-rule" class="headerlink" title="The golden rule:"></a>The golden rule:</h2><p>b = a copies the bits from a into b.<br>Passing parameters copies the bits.</p>
+<h2 id="Instantiation-of-Arrays"><a href="#Instantiation-of-Arrays" class="headerlink" title="Instantiation of Arrays"></a>Instantiation of Arrays</h2><p>Arrays are also Objects. As we’ve seen, objects are (usually) instantiated using the new keyword.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Planet p = <span class="keyword">new</span> Planet(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, “blah.png”);</span><br><span class="line"><span class="keyword">int</span>[] x = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">95</span>, <span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>int[] a = new int[]{0, 1, 2, 95, 4};<br>Creates a 64 bit box for storing an int array address. (declaration)<br>Creates a new Object, in this case an int array. (instantiation)<br>Puts the address of this new Object into the 64 bit box named a. (assignment)</p>
+<p>Note: Instantiated objects can be lost!</p>
+<h1 id="Build-our-own-list-class"><a href="#Build-our-own-list-class" class="headerlink" title="Build our own list class"></a>Build our own list class</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntList</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> first;</span><br><span class="line">    <span class="keyword">public</span> IntList rest;        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">IntList</span><span class="params">(<span class="keyword">int</span> f, IntList r)</span> </span>&#123;</span><br><span class="line">        first = f;</span><br><span class="line">        rest = r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For example, if we want to make a list of the numbers 5, 10, and 15, we can either do:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IntList L = <span class="keyword">new</span> IntList(<span class="number">5</span>, <span class="keyword">null</span>);</span><br><span class="line">L.rest = <span class="keyword">new</span> IntList(<span class="number">10</span>, <span class="keyword">null</span>);</span><br><span class="line">L.rest.rest = <span class="keyword">new</span> IntList(<span class="number">15</span>, <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure></p>
+<p>Alternately, we could build our list <code>backwards</code>, yielding slightly nicer but harder to understand code:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IntList L = <span class="keyword">new</span> IntList(<span class="number">15</span>, <span class="keyword">null</span>);</span><br><span class="line">L = <span class="keyword">new</span> IntList(<span class="number">10</span>, L);</span><br><span class="line">L = <span class="keyword">new</span> IntList(<span class="number">5</span>, L);</span><br></pre></td></tr></table></figure>
+<h3 id="size"><a href="#size" class="headerlink" title="size()"></a>size()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Return the size of the list using... recursion! */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (rest == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> + <span class="keyword">this</span>.rest.size();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** Return the size of the list using no recursion! */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">iterativeSize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    IntList p = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">int</span> totalSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">        totalSize += <span class="number">1</span>;</span><br><span class="line">        p = p.rest;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> totalSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The key thing to remember about <code>recursive</code> code is that you need a <code>base case</code>. In this situation, the most reasonable base case is that rest is null, which results in a size 1 list.</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h3>
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/Java/">Java</a>
+      
+        <a href="/tags/List/">List</a>
+      
+	  </div>
+    
+		
+	
+		<div class="art-item-footer">
+				
+				
+					<span class="art-item-right">next：<a href="/2018/03/26/entropy/" rel="next"  title="entropy">
+						entropy
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'Lists',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<img class='avatar waves-image' src='/images/avatar.jpg' />
+
+<div class='header'>Junying Chou</div>
+<div class='content'>
+<div class='desc'>Practise swimming and coding!</div>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/CS-61B/"><div class='name'>CS 61B</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Hexo/"><div class='name'>Hexo</div><div class='badget'>2</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Markdown/"><div class='name'>Markdown</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/Maths/"><div class='name'>Maths</div><div class='badget'>1</div></a></li>
+    
+        <li><a class="flat-box" href="/categories/NLP/"><div class='name'>NLP</div><div class='badget'>4</div></a></li>
+    
+    </ul>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/CRF/" style="font-size: 14px; color: #808080">CRF</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 17px; color: #404040">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/List/" style="font-size: 14px; color: #808080">List</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a>
+    </div>
+</div>
+
+
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/spiderChow" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

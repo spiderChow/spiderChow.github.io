@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: Machine learning | Home of Junying</title>
+  <title>entropy | Home of Junying</title>
   <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth." />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,15 +12,16 @@
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="alternate" href="/atom.xml" title="Home of Junying">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Home of Junying">
-<meta property="og:url" content="http://junying.ink/tags/Machine-learning/index.html">
+  <meta name="description" content="entropy and cross entropy and relative entropy, pointwise mutual information">
+<meta property="og:type" content="article">
+<meta property="og:title" content="entropy">
+<meta property="og:url" content="http://junying.ink/2018/03/26/entropy/index.html">
 <meta property="og:site_name" content="Home of Junying">
-<meta property="og:description" content="I would like to put my blogs and projects here, as well as something of worth.">
+<meta property="og:description" content="entropy and cross entropy and relative entropy, pointwise mutual information">
+<meta property="og:updated_time" content="2018-03-26T06:03:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Home of Junying">
-<meta name="twitter:description" content="I would like to put my blogs and projects here, as well as something of worth.">
+<meta name="twitter:title" content="entropy">
+<meta name="twitter:description" content="entropy and cross entropy and relative entropy, pointwise mutual information">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -123,59 +124,71 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        
-  <script>
-    window.subData= { title:'Tag : Machine learning'}
-  </script>
-
-<section class="post-list">
+        <article id="post-entropy"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/03/26/entropy/">
+    	entropy
+    </a>
+  </h2>
+	<time>
+	  Mar 26, 2018
+	</time>
 	
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/03/20/Stanford-Ner/">
-        Stanford Ner
-      </a>
-    </h2>
-    
-    <time>
-      Mar 20, 2018
-    </time>
-		
     
     <div class='cats'>
-        <a href="/categories/NLP/">NLP</a>
+        <a href="/categories/Maths/">Maths</a>
     </div>
 
-  </section>
-  <section class="article typo">
-	  <p>To find how to train the model incrementally, e.g. if the client add a sentence, then a updated model should be commited. For efficience, we should only train the new sentence instead of train all the corpus again.</p>
+	</section>
+	
+		<section class="toc-wrapper"></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>entropy and cross entropy and relative entropy, pointwise mutual information<br><a id="more"></a></p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-    
-	  <div class="readmore">
-      <a href="/2018/03/20/Stanford-Ner/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/Java/">Java</a>
-      
-        <a href="/tags/Machine-learning/">Machine learning</a>
-      
-        <a href="/tags/CRF/">CRF</a>
-      
-	  </div>
-    
-  </section>
+<p><a href="https://www.zhihu.com/question/41252833" target="_blank" rel="noopener">知乎上对于交叉熵信息熵相对熵的理解</a></p>
+<p>交叉熵，其用来衡量在给定的真实分布下，使用非真实分布所指定的策略消除系统的不确定性所需要付出的努力的大小。<br>相对熵，其用来衡量两个取值为正的函数或概率分布之间的差异<br>相对熵 = 某个策略的交叉熵 - 信息熵（根据系统真实分布计算而得的信息熵，为最优策略</p>
+<hr>
+<p>PMI（Pointwise Mutual Information）<br>$$PMI(x;y)=log p(x,y)/p(x)p(y)=log p(x|y)/p(x)=logp(y|x)/p(y)$$</p>
+<p>如果x跟y不相关，则p(x,y)=p(x)p(y)。二者相关性越大，则p(x,y)就相比于p(x)p(y)越大</p>
+<blockquote>
+<p>例子<br>举个自然语言处理中的例子来说，我们想衡量like这个词的极性（正向情感还是负向情感）。我们可以预先挑选一些正向情感的词，比如good。然后<br>我们算like跟good的PMI，即： </p>
+<blockquote>
+<p>PMI(like,good)=logp(like,good)p(like)p(good)<br>其中p(like)是like在语料库中出现的概率（出现次数除以总词数N），p(like,good)<br>表示like跟good在一句话中同时出现的概率（like跟good同时出现的次数除以N2）。<br>PMI(like,good)越大表示like的正向情感倾向就越明显</p>
+</blockquote>
+</blockquote>
+
+  	</div>
+	  
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/03/27/Lists/" rel="prev"  title="Lists">
+						Lists 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2018/03/26/LDA/" rel="next"  title="LDA">
+						LDA
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
-    </div>
-  
-</section>
-
+<script>
+	window.subData = {
+		title: 'entropy',
+		tools: true
+	}
+</script>
 
       </div>
       <aside class='l_side'>
