@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Tag: Hexo | Home of Junying</title>
+  <title>Tag: udemy | Home of Junying</title>
   <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth." />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -15,7 +15,7 @@
   <meta name="description" content="I would like to put my blogs and projects here, as well as something of worth.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Home of Junying">
-<meta property="og:url" content="http://junying.ink/tags/Hexo/index.html">
+<meta property="og:url" content="http://junying.ink/tags/udemy/index.html">
 <meta property="og:site_name" content="Home of Junying">
 <meta property="og:description" content="I would like to put my blogs and projects here, as well as something of worth.">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
       <div class='l_main'>
         
   <script>
-    window.subData= { title:'Tag : Hexo'}
+    window.subData= { title:'Tag : udemy'}
   </script>
 
 <section class="post-list">
@@ -135,37 +135,40 @@
   <section class="meta">
     
     <h2 class="title">
-      <a href="/2018/03/16/learn-to-write-with-hexo/">
-        Hexo Note
+      <a href="/2018/04/01/augular5/">
+        augular5
       </a>
     </h2>
     
     <time>
-      Mar 16, 2018
+      Apr 1, 2018
     </time>
 		
-    
-    <div class='cats'>
-        <a href="/categories/Hexo/">Hexo</a>
-    </div>
-
   </section>
   <section class="article typo">
-	  <ol>
-<li>create new post</li>
-<li>create new page</li>
-</ol>
+	  <a id="more"></a>
+<h1 id="set-up-your-project"><a href="#set-up-your-project" class="headerlink" title="set up your project"></a>set up your project</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br><span class="line">ng new my-first-app</span><br><span class="line"><span class="built_in">cd</span> my-frist-app</span><br><span class="line">ng server</span><br></pre></td></tr></table></figure>
+<h1 id="create-component"><a href="#create-component" class="headerlink" title="create component"></a>create component</h1><ul>
+<li>mkdir under the app folder called ‘server’  </li>
+<li><p>under server/ create<br>&ensp;server.component.ts<br>&ensp;server.component.css<br>&ensp;server.component.html</p>
+</li>
+<li><p>in the server.component.ts  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">    selector: <span class="string">'app-server'</span>,</span><br><span class="line">    templateUrl: <span class="string">'./server.component.html'</span>,</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ServerComponent&#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>in the app.module.ts<br>add ‘ServerComponent’ in the declaration<br>and import {ServerComponent} from ‘./server/server.component’;</p>
+</li>
+</ul>
+<hr>
+<p>or use CLI:<br>ng g c server</p>
+<h1 id="use-the-component"><a href="#use-the-component" class="headerlink" title="use the component"></a>use the component</h1><p>in app.component.html just add <app-server></app-server></p>
 
-    
-	  <div class="readmore">
-      <a href="/2018/03/16/learn-to-write-with-hexo/">Read More</a>
-    </div>
+
     
     
     
 	  <div class="full-width auto-padding tags">
       
-        <a href="/tags/Hexo/">Hexo</a>
+        <a href="/tags/udemy/">udemy</a>
       
 	  </div>
     

@@ -131,6 +131,85 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2018/04/02/vim/">
+        vim
+      </a>
+    </h2>
+    
+    <time>
+      Apr 2, 2018
+    </time>
+		
+    
+    <div class='cats'>
+        <a href="/categories/vim/">vim</a>
+    </div>
+
+  </section>
+  <section class="article typo">
+	  <a id="more"></a>
+<p>:set number #设置行号<br>:%s/old/new/g     #搜索整个文件，将所有的old替换为new<br>:%s/old/new/gc     搜索整个文件，将所有的old替换为new，每次都要你确认是否替换</p>
+<p>h,j,k,l     上，下，左，右<br>ctrl-f     上翻一页<br>ctrl-b     下翻一页<br>$     跳至行尾</p>
+
+
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2018/04/01/augular5/">
+        augular5
+      </a>
+    </h2>
+    
+    <time>
+      Apr 1, 2018
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <a id="more"></a>
+<h1 id="set-up-your-project"><a href="#set-up-your-project" class="headerlink" title="set up your project"></a>set up your project</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br><span class="line">ng new my-first-app</span><br><span class="line"><span class="built_in">cd</span> my-frist-app</span><br><span class="line">ng server</span><br></pre></td></tr></table></figure>
+<h1 id="create-component"><a href="#create-component" class="headerlink" title="create component"></a>create component</h1><ul>
+<li>mkdir under the app folder called ‘server’  </li>
+<li><p>under server/ create<br>&ensp;server.component.ts<br>&ensp;server.component.css<br>&ensp;server.component.html</p>
+</li>
+<li><p>in the server.component.ts  </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">    selector: <span class="string">'app-server'</span>,</span><br><span class="line">    templateUrl: <span class="string">'./server.component.html'</span>,</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ServerComponent&#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>in the app.module.ts<br>add ‘ServerComponent’ in the declaration<br>and import {ServerComponent} from ‘./server/server.component’;</p>
+</li>
+</ul>
+<hr>
+<p>or use CLI:<br>ng g c server</p>
+<h1 id="use-the-component"><a href="#use-the-component" class="headerlink" title="use the component"></a>use the component</h1><p>in app.component.html just add <app-server></app-server></p>
+
+
+    
+    
+    
+	  <div class="full-width auto-padding tags">
+      
+        <a href="/tags/udemy/">udemy</a>
+      
+	  </div>
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2018/03/27/Lists/">
         Lists
       </a>
@@ -377,6 +456,8 @@
   </section>
   <section class="article typo">
 	  <h4 id="open-your-operating-system’s-file-explorer-in-this-directory"><a href="#open-your-operating-system’s-file-explorer-in-this-directory" class="headerlink" title="open your operating system’s file explorer in this directory."></a>open your operating system’s file explorer in this directory.</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ open . <span class="comment"># for MAC</span></span><br><span class="line">$ gnome-open . <span class="comment"># for Ubuntu</span></span><br></pre></td></tr></table></figure>
+<p>nohup command &gt; myout.file 2&gt;&amp;1 &amp;<br>输出被重定向到myout.file文件中。<br>使用 jobs 查看任务</p>
+
 
     
     
@@ -431,89 +512,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/03/16/markdown-note/">
-        Markdown Note
-      </a>
-    </h2>
-    
-    <time>
-      Mar 16, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/Markdown/">Markdown</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <p>Basic markdown grammars for a quick reference.</p>
-
-    
-	  <div class="readmore">
-      <a href="/2018/03/16/markdown-note/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/Markdown/">Markdown</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2018/03/16/learn-to-write-with-hexo/">
-        Hexo Note
-      </a>
-    </h2>
-    
-    <time>
-      Mar 16, 2018
-    </time>
-		
-    
-    <div class='cats'>
-        <a href="/categories/Hexo/">Hexo</a>
-    </div>
-
-  </section>
-  <section class="article typo">
-	  <ol>
-<li>create new post</li>
-<li>create new page</li>
-</ol>
-
-    
-	  <div class="readmore">
-      <a href="/2018/03/16/learn-to-write-with-hexo/">Read More</a>
-    </div>
-    
-    
-    
-	  <div class="full-width auto-padding tags">
-      
-        <a href="/tags/Hexo/">Hexo</a>
-      
-	  </div>
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -557,6 +555,8 @@
     
         <li><a class="flat-box" href="/categories/NLP/"><div class='name'>NLP</div><div class='badget'>4</div></a></li>
     
+        <li><a class="flat-box" href="/categories/vim/"><div class='name'>vim</div><div class='badget'>1</div></a></li>
+    
     </ul>
     
 </div>
@@ -566,7 +566,7 @@
 <div class="m_widget tagcloud">
     <div class="header">Tags</div>
     <div class='content'>
-        <a href="/tags/CRF/" style="font-size: 14px; color: #808080">CRF</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 17px; color: #404040">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/List/" style="font-size: 14px; color: #808080">List</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a>
+        <a href="/tags/CRF/" style="font-size: 14px; color: #808080">CRF</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #808080">Hexo</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Keywords-Extraction/" style="font-size: 17px; color: #404040">Keywords Extraction</a> <a href="/tags/Linux/" style="font-size: 14px; color: #808080">Linux</a> <a href="/tags/List/" style="font-size: 14px; color: #808080">List</a> <a href="/tags/Machine-learning/" style="font-size: 14px; color: #808080">Machine learning</a> <a href="/tags/Markdown/" style="font-size: 14px; color: #808080">Markdown</a> <a href="/tags/udemy/" style="font-size: 14px; color: #808080">udemy</a>
     </div>
 </div>
 
